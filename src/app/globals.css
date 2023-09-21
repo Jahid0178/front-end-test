@@ -2,26 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  /* Buttons */
+  .btn {
+    @apply px-6 py-2 border border-transparent rounded-full flex justify-center items-center gap-2 text-primary;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  .btn-primary {
+    @apply bg-[#CAE138];
+  }
+
+  .btn-outline {
+    @apply border border-gray-300;
+  }
+
+  .btn-danger {
+    @apply bg-[#f36a6a4b];
+  }
+
+  /* Texts */
+  .text-primary {
+    @apply text-[#3B3E44] !important;
+  }
+
+  /* Forms */
+  .field-wrap {
+    @apply flex flex-col space-y-2;
+  }
+
+  .input-field {
+    @apply border border-[#DCDCDC] outline-none px-4 py-2 rounded-full;
+  }
 }
